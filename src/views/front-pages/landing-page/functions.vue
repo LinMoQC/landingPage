@@ -163,7 +163,7 @@ const white = [
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 840px) {
 
     .content_1 {
         display: flex;
