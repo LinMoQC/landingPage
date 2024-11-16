@@ -74,6 +74,7 @@ const white = [
                 <p class="text-body-1 mb-0">
                     高频使用功能单列 使用便捷
                 </p>
+
                 <VRow>
                     <VCol v-for="(item, index) in dark" :key="index" cols="12" class="d-flex padding-contain">
                         <template v-if="index % 2 === 0">
@@ -91,13 +92,13 @@ const white = [
                                     点击使用 →
                                 </VBtn>
                             </div>
-                            <VImg :src="item.img" alt="Functions Image" class="mx-auto mb-4" max-width="600"
-                                style="object-fit: cover;" />
+                            <img :src="item.img" alt="Functions Image" class="mx-auto mb-4"
+                                style="max-width: 600px; height: 400px; object-fit: cover; width: 100%;" />
                         </template>
 
                         <template v-else>
-                            <VImg :src="item.img" alt="Functions Image" class="mx-auto mb-4" max-width="600"
-                                style="object-fit: cover;" />
+                            <img :src="item.img" alt="Functions Image" class="mx-auto mb-4"
+                                style="max-width: 600px; height: 400px; object-fit: cover; width: 100%;" />
                             <div class="right-content ms-4">
                                 <div class="icon mb-4">
                                     <VIcon color="primary" size="48">mdi-file-document-outline</VIcon>
@@ -116,6 +117,7 @@ const white = [
                     </VCol>
                 </VRow>
 
+
             </div>
         </div>
     </VContainer>
@@ -128,9 +130,7 @@ const white = [
 }
 
 .left-content {
-    max-width: 40%;
-    margin-right: 10rem;
-    margin-left: 10rem;
+    width: 50%;
 
     .title {
         font-size: 32px;
@@ -155,9 +155,11 @@ const white = [
 }
 
 .right-content {
-    max-width: 40%;
-    margin-left: 10rem;
-    margin-right: 10re;
+    width: 50%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
     .title {
         font-size: 32px;
