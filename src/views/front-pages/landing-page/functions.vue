@@ -78,40 +78,44 @@ const white = [
                 <VRow>
                     <VCol v-for="(item, index) in dark" :key="index" cols="12" class="d-flex padding-contain">
                         <template v-if="index % 2 === 0">
-                            <div class="left-content">
-                                <div class="icon mb-4">
-                                    <VIcon color="primary" size="48">mdi-file-document-outline</VIcon>
+                            <div class="content_1">
+                                <div class="left-content">
+                                    <div class="icon mb-4">
+                                        <VIcon color="primary" size="48">mdi-file-document-outline</VIcon>
+                                    </div>
+                                    <h2 class="title">
+                                        {{ item.title }}
+                                    </h2>
+                                    <p class="description" style="width: 15rem;">
+                                        {{ item.content }}
+                                    </p>
+                                    <VBtn color="primary" class="mt-4" outlined>
+                                        点击使用 →
+                                    </VBtn>
                                 </div>
-                                <h2 class="title">
-                                    {{ item.title }}
-                                </h2>
-                                <p class="description" style="width: 15rem;">
-                                    {{ item.content }}
-                                </p>
-                                <VBtn color="primary" class="mt-4" outlined>
-                                    点击使用 →
-                                </VBtn>
+                                <img :src="item.img" alt="Functions Image" class="mx-auto mb-4"
+                                    style="max-width: 600px; height: 400px; object-fit: cover; width: 100%;" />
                             </div>
-                            <img :src="item.img" alt="Functions Image" class="mx-auto mb-4"
-                                style="max-width: 600px; height: 400px; object-fit: cover; width: 100%;" />
                         </template>
 
                         <template v-else>
-                            <img :src="item.img" alt="Functions Image" class="mx-auto mb-4"
-                                style="max-width: 600px; height: 400px; object-fit: cover; width: 100%;" />
-                            <div class="right-content ms-4">
-                                <div class="icon mb-4">
-                                    <VIcon color="primary" size="48">mdi-file-document-outline</VIcon>
+                            <div class="content_2">
+                                <img :src="item.img" alt="Functions Image" class="mx-auto mb-4"
+                                    style="max-width: 600px; height: 400px; object-fit: cover; width: 100%;" />
+                                <div class="right-content ms-4">
+                                    <div class="icon mb-4">
+                                        <VIcon color="primary" size="48">mdi-file-document-outline</VIcon>
+                                    </div>
+                                    <h2 class="title">
+                                        {{ item.title }}
+                                    </h2>
+                                    <p class="description" style="width: 15rem;">
+                                        {{ item.content }}
+                                    </p>
+                                    <VBtn color="primary" class="mt-4" outlined>
+                                        ← 点击使用
+                                    </VBtn>
                                 </div>
-                                <h2 class="title">
-                                    {{ item.title }}
-                                </h2>
-                                <p class="description" style="width: 15rem;">
-                                    {{ item.content }}
-                                </p>
-                                <VBtn color="primary" class="mt-4" outlined>
-                                    ← 点击使用
-                                </VBtn>
                             </div>
                         </template>
                     </VCol>
@@ -129,6 +133,21 @@ const white = [
     padding: 5rem;
 }
 
+.content_1 {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    flex-direction: row;
+}
+
+.content_2 {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    flex-direction: row;
+}
+
+
 .left-content {
     width: 50%;
 
@@ -144,13 +163,18 @@ const white = [
     }
 }
 
-@media (max-width: 600px) {
-    .left-content {
-        display: none;
+@media (max-width: 640px) {
+
+    .content_1 {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+        flex-direction: column;
     }
 
-    .right-content {
-        display: none;
+    .content_2 {
+        align-items: flex-end;
+        flex-direction: column-reverse;
     }
 }
 
